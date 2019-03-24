@@ -15,7 +15,10 @@ class Cv extends Component {
               <div className="picture-resume-wrapper">
                 <div className="picture-resume">
                   <span>
-                    <img src="/images/avatar.png" alt="profile pic" />
+                    <img
+                      src="https://raw.githubusercontent.com/omkarnath1123/Profiler/master/public/images/avatar.png"
+                      alt="profile pic"
+                    />
                   </span>
                   <svg version="1.1" viewBox="0 0 350 350">
                     <defs>
