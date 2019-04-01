@@ -241,7 +241,7 @@ class Cv extends Component {
                   <div className="time">connaught place, Delhi</div>
                 </div>
                 <div className="job-wrapper clearfix">
-                  <div className="experience-title">Front end Developer</div>
+                  <div className="experience-title">Front end Developer (Internship)</div>
                   <div className="company-description">
                     <p className="white-color">
                       Front end Developer – Develops the UI & UX of website for
