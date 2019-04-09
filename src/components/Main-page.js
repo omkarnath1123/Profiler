@@ -97,22 +97,38 @@ class MainPage extends Component {
 
             <section class="socialBox">
               <div id="twitter_logo" class="logo">
-                <a href="https://twitter.com/omkarnath1123">
+                <a
+                  href="https://twitter.com/omkarnath1123"
+                  alt="TWITTER"
+                  target="_blank"
+                >
                   <p>Twitter</p>
                 </a>
               </div>
               <div id="quora_logo" class="logo">
-                <a href="https://www.quora.com/profile/Omkar-Nath-14">
+                <a
+                  href="https://www.quora.com/profile/Omkar-Nath-14"
+                  alt="QUORA"
+                  target="_blank"
+                >
                   <p>Quora</p>
                 </a>
               </div>
               <div id="linked_in_logo" class="logo">
-                <a href="https://www.linkedin.com/in/omkarnath1123/">
+                <a
+                  href="https://www.linkedin.com/in/omkarnath1123/"
+                  alt="LINKED IN"
+                  target="_blank"
+                >
                   <p>Linked IN</p>
                 </a>
               </div>
               <div id="github_logo" class="logo">
-                <a href="https://github.com/omkarnath1123">
+                <a
+                  href="https://github.com/omkarnath1123"
+                  alt="GITHUB"
+                  target="_blank"
+                >
                   <p>GitHub</p>
                 </a>
               </div>
