@@ -241,7 +241,9 @@ class Cv extends Component {
                   <div className="time">connaught place, Delhi</div>
                 </div>
                 <div className="job-wrapper clearfix">
-                  <div className="experience-title">Front end Developer</div>
+                  <div className="experience-title">
+                    Front end Developer (Internship)
+                  </div>
                   <div className="company-description">
                     <p className="white-color">
                       Front end Developer – Develops the UI & UX of website for
@@ -264,7 +266,7 @@ class Cv extends Component {
                   <li className="skill-percentage">Node.js</li>
                   <li className="skill-percentage">Javascript</li>
                   <li className="skill-percentage">Java</li>
-                  <li className="skill-percentage">Python</li>
+                  <li className="skill-percentage">Shell</li>
                   <li className="skill-percentage">React / Redux</li>
                   <li className="skill-percentage">mongodB</li>
                 </ul>
@@ -280,9 +282,9 @@ class Cv extends Component {
                 </p>
 
                 <p>
-                  A huge fan of Ted talks, AI, ML and Elon Musk. Highly active
-                  on watching youtube and reading answers/articles on quora or
-                  medium.
+                  A huge fan of Ted talks, AI, ML, Linus Torvalds and Elon Musk.
+                  Highly active on watching youtube and reading answers/articles
+                  on quora or medium.
                 </p>
               </div>
             </div>

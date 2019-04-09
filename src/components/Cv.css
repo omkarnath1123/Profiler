@@ -16,7 +16,8 @@ body {
   height: 100%;
 }
 
-body {
+body,
+div {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 1.5em;
@@ -241,14 +242,14 @@ h3.education-title {
   font-style: bold;
 }
 
-.education-type{
+.education-type {
   color: #4a4e51;
   font-size: 1.2em;
   font-weight: 400;
   text-align: left;
 }
 
-.inst-type{
+.inst-type {
   color: #3d3e42;
   font-weight: 300;
   text-align: left;
@@ -256,7 +257,7 @@ h3.education-title {
   padding: 5px 0px 0px 0px;
 }
 
-.edu-year{
+.edu-year {
   color: #3d3e42;
   font-weight: 100;
   text-align: right;
