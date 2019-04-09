@@ -1,13 +1,14 @@
 {
-  "main.css": "/Profiler/static/css/main.5888d870.chunk.css",
-  "main.js": "/Profiler/static/js/main.850e2943.chunk.js",
-  "main.js.map": "/Profiler/static/js/main.850e2943.chunk.js.map",
+  "main.css": "/Profiler/static/css/main.0598b66a.chunk.css",
+  "main.js": "/Profiler/static/js/main.5ebc0ddc.chunk.js",
+  "main.js.map": "/Profiler/static/js/main.5ebc0ddc.chunk.js.map",
   "runtime~main.js": "/Profiler/static/js/runtime~main.68bf5ade.js",
   "runtime~main.js.map": "/Profiler/static/js/runtime~main.68bf5ade.js.map",
   "static/js/2.88ea1fd6.chunk.js": "/Profiler/static/js/2.88ea1fd6.chunk.js",
   "static/js/2.88ea1fd6.chunk.js.map": "/Profiler/static/js/2.88ea1fd6.chunk.js.map",
   "index.html": "/Profiler/index.html",
-  "precache-manifest.8c134b62274604f9511cf0176c7a24a1.js": "/Profiler/precache-manifest.8c134b62274604f9511cf0176c7a24a1.js",
+  "precache-manifest.b9d00e2a38858bd9ab3ead59a0922357.js": "/Profiler/precache-manifest.b9d00e2a38858bd9ab3ead59a0922357.js",
   "service-worker.js": "/Profiler/service-worker.js",
-  "static/css/main.5888d870.chunk.css.map": "/Profiler/static/css/main.5888d870.chunk.css.map"
+  "static/css/main.0598b66a.chunk.css.map": "/Profiler/static/css/main.0598b66a.chunk.css.map",
+  "static/media/Main-page.css": "/Profiler/static/media/twitter.8445dfa8.png"
 }
