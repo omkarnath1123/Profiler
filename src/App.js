@@ -11,8 +11,8 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <Switch>
-            <Route path="/Profiler" exact component={MainPage} />
-            <Route path="/Profiler/cv" exact component={Cv} />
+            <Route path="/" exact component={MainPage} />
+            <Route path="/cv" exact component={Cv} />
             <Route component={ErrorPage} />
           </Switch>
         </BrowserRouter>
