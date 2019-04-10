@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { HashRouter, BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Cv from "./components/Cv";
 import MainPage from "./components/Main-page";
 import ErrorPage from "./components/404";
