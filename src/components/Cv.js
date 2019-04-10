@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./Cv.css";
 
 class Cv extends Component {
@@ -15,10 +16,12 @@ class Cv extends Component {
               <div className="picture-resume-wrapper">
                 <div className="picture-resume">
                   <span>
-                    <img
-                      src="https://raw.githubusercontent.com/omkarnath1123/Profiler/master/public/images/avatar.png"
-                      alt="profile pic"
-                    />
+                    <Link to="/">
+                      <img
+                        src="https://raw.githubusercontent.com/omkarnath1123/Profiler/master/public/images/avatar.png"
+                        alt="profile pic"
+                      />
+                    </Link>
                   </span>
                   <svg version="1.1" viewBox="0 0 350 350">
                     <defs>

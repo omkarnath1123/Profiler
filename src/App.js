@@ -8,15 +8,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Cv />
+        {/* <Cv /> */}
         {/* <MainPage /> */}
-        
-        {/* <BrowserRouter>
-        <Switch>
-          <Route path="/" exact Component={MainPage}/>
-          <Route path="/cv" exact Component={Cv}/>
-        </Switch>
-        </BrowserRouter> */}
+
+        <BrowserRouter>
+          <Switch>
+            <Route path="/" exact component={MainPage} />
+            <Route path="/cv" exact component={Cv} />
+          </Switch>
+        </BrowserRouter>
       </div>
     );
   }

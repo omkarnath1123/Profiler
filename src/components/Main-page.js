@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./Main-page.css";
 
 class MainPage extends Component {
@@ -69,7 +70,10 @@ class MainPage extends Component {
               </div>
             </header>
 
-            <a class="codeLink" href="" />
+            <Link to="/cv">
+              CODE LINK
+              <span class="codeLink" />
+            </Link>
           </div>
           <article class="aboutWrapper" id="aboutHere">
             <section class="aboutCol">
@@ -146,11 +150,10 @@ class MainPage extends Component {
               </div>
 
               <div class="tagBox tagText">
-                “....the industry has a long history of successful developers
-                with varying backgrounds, people tend to care more about what
-                you've actually built than how you got there..”
-                <br />
-                The Odin Project
+                “....open source project is the next step to build products with
+                your knowledge and also the open source industry has a long
+                history of successful developers with varying backgrounds. so,
+                here is some of my ideas into action..”
               </div>
             </section>
 

@@ -4,7 +4,6 @@
   "private": true,
   "homepage": "https://omkarnath1123.github.io/Profiler",
   "dependencies": {
-    "gh-pages": "^2.0.1",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-router-dom": "^5.0.0",
