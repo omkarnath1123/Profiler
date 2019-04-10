@@ -7,11 +7,11 @@ class MainPage extends Component {
     return (
       <div>
         {/* <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <p className="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]--> */}
 
-        <div class="main-body-wrapper maxWidth" id="top">
-          <nav id="navbarOn" class="navbar-main">
+        <div className="main-body-wrapper maxWidth" id="top">
+          <nav id="navbarOn" className="navbar-main">
             <ul>
               <li>
                 <a href="#aboutHere">about</a>
@@ -25,11 +25,11 @@ class MainPage extends Component {
             </ul>
           </nav>
 
-          <nav id="burgerOn" class="burger">
-            <a href="#" class="burger__button" id="burger-button">
-              <span class="burger__button__icon" />
+          <nav id="burgerOn" className="burger">
+            <a href="#" className="burger__button" id="burger-button">
+              <span className="burger__button__icon" />
             </a>
-            <ul class="burger__menu" id="about_code_cta">
+            <ul className="burger__menu" id="about_code_cta">
               <li>
                 <a onclick="close_menu()" href="#aboutHere">
                   about
@@ -48,20 +48,20 @@ class MainPage extends Component {
             </ul>
           </nav>
 
-          <div class="lappyTitleWrapper" id="lapTitWrap">
-            <canvas id="canvasShade1" class="shade1" />
+          <div className="lappyTitleWrapper" id="lapTitWrap">
+            <canvas id="canvasShade1" className="shade1" />
 
-            <div class="lapy" id="lapytwister">
+            <div className="lapy" id="lapytwister">
               <img
                 src="https://rawgit.com/appijumbo/landingPage/gh-pages/img/laptop.svg"
                 alt="laptop"
               />
             </div>
 
-            <header class="titleCol">
-              <div class="col">
-                <h1 class="title">Omkar</h1>
-                <h1 class="title">Nath</h1>
+            <header className="titleCol">
+              <div className="col">
+                <h1 className="title">Omkar</h1>
+                <h1 className="title">Nath</h1>
                 <br />
                 <h2>
                   Hello fellow surfers and welcome to this little corner of the
@@ -72,13 +72,13 @@ class MainPage extends Component {
 
             <Link to="/cv">
               CODE LINK
-              <span class="codeLink" />
+              <span className="codeLink" />
             </Link>
           </div>
-          <article class="aboutWrapper" id="aboutHere">
-            <section class="aboutCol">
-              <div class="ab-col">
-                <span class="about-title">About</span>
+          <article className="aboutWrapper" id="aboutHere">
+            <section className="aboutCol">
+              <div className="ab-col">
+                <span className="about-title">About</span>
                 <br />
                 <span>
                   Experienced Backend Developer with a demonstrated history of
@@ -99,8 +99,8 @@ class MainPage extends Component {
               </div>
             </section>
 
-            <section class="socialBox">
-              <div id="twitter_logo" class="logo">
+            <section className="socialBox">
+              <div id="twitter_logo" className="logo">
                 <a
                   href="https://twitter.com/omkarnath1123"
                   alt="TWITTER"
@@ -109,7 +109,7 @@ class MainPage extends Component {
                   <p>Twitter</p>
                 </a>
               </div>
-              <div id="quora_logo" class="logo">
+              <div id="quora_logo" className="logo">
                 <a
                   href="https://www.quora.com/profile/Omkar-Nath-14"
                   alt="QUORA"
@@ -118,7 +118,7 @@ class MainPage extends Component {
                   <p>Quora</p>
                 </a>
               </div>
-              <div id="linked_in_logo" class="logo">
+              <div id="linked_in_logo" className="logo">
                 <a
                   href="https://www.linkedin.com/in/omkarnath1123/"
                   alt="LINKED IN"
@@ -127,7 +127,7 @@ class MainPage extends Component {
                   <p>Linked IN</p>
                 </a>
               </div>
-              <div id="github_logo" class="logo">
+              <div id="github_logo" className="logo">
                 <a
                   href="https://github.com/omkarnath1123"
                   alt="GITHUB"
@@ -139,17 +139,17 @@ class MainPage extends Component {
             </section>
           </article>
 
-          <canvas id="canvasShade2" class="shade2" />
+          <canvas id="canvasShade2" className="shade2" />
 
-          <div id="codeHere" class="codeWrapper">
-            <section class="codeTagBox ">
-              <div class="tagBox tagTitle">
-                <span class="bracket">&lt;</span>
+          <div id="codeHere" className="codeWrapper">
+            <section className="codeTagBox ">
+              <div className="tagBox tagTitle">
+                <span className="bracket">&lt;</span>
                 <span>CODE</span>
-                <span class="bracket">&gt;</span>
+                <span className="bracket">&gt;</span>
               </div>
 
-              <div class="tagBox tagText">
+              <div className="tagBox tagText">
                 “....open source project is the next step to build products with
                 your knowledge and also the open source industry has a long
                 history of successful developers with varying backgrounds. so,
@@ -157,45 +157,45 @@ class MainPage extends Component {
               </div>
             </section>
 
-            <section class="codeExamplesBox">
+            <section className="codeExamplesBox">
               <a
                 id="appLink1"
-                class="appSize"
+                className="appSize"
                 href="https://github.com/omkarnath1123/Spider-REST-API"
                 alt="Spider REST API"
                 target="_blank"
               />
               <a
                 id="appLink2"
-                class="appSize"
+                className="appSize"
                 href="https://github.com/omkarnath1123/standalone-algorithm-visualizer"
                 alt="Standalone Algorithm Visualizer"
                 target="_blank"
               />
               <a
                 id="appLink3"
-                class="appSize"
+                className="appSize"
                 href="https://github.com/omkarnath1123/My-Awesome-Shop"
                 alt="Awesome shop"
                 target="_blank"
               />
               {/* <a
                 id="appLink4"
-                class="appSize"
+                className="appSize"
                 href=""
                 alt=""
                 target="_blank"
               />
               <a
                 id="appLink5"
-                class="appSize"
+                className="appSize"
                 href=""
                 alt=""
                 target="_blank"
               />
               <a
                 id="appLink6"
-                class="appSize"
+                className="appSize"
                 href=""
                 alt=""
                 target="_blank"
@@ -203,7 +203,7 @@ class MainPage extends Component {
             </section>
           </div>
 
-          <section id="callToAction" class="cta">
+          <section id="callToAction" className="cta">
             <h3>
               <span>like what you see?..</span>
               <span>great then email me!</span>
@@ -211,14 +211,14 @@ class MainPage extends Component {
             <p>omkarnath1123@gmail.com</p>
           </section>
 
-          <footer class="footer">
-            <div class="footerLink">
-              <a href="#top" class="chevron">
+          <footer className="footer">
+            <div className="footerLink">
+              <a href="#top" className="chevron">
                 &#x2227;
               </a>
             </div>
-            <div class="footerBottom">
-              <h4 class="item">&copy; Omkar Nath 2019</h4>
+            <div className="footerBottom">
+              <h4 className="item">&copy; Omkar Nath 2019</h4>
             </div>
           </footer>
         </div>
