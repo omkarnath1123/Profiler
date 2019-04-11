@@ -4,7 +4,7 @@
 
 <!-- [![Trello](src/images/trello.png)]() -->
 
-> click on the above :point_up: `Github pages` badge to visit the website. Hope you like it :grey_exclamation: :grey_exclamation:
+> click on the above :point_up: `Github pages` badge to visit the website. Hope you like it :exclamation::exclamation:
 
 This repository contain the React code for website @ Github.
 
