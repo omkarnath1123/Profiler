@@ -69,7 +69,7 @@ class ErrorPage extends Component {
             >
               {"//"}{" "}
               <a href="" style={{ textDecoration: "underline" }}>
-                <Link to="/">Go Home</Link>
+                <Link to="/">Click here to Go Home</Link>
                 {"!"}
               </a>
             </span>

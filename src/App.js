@@ -13,7 +13,8 @@ class App extends Component {
           <Switch>
             <Route path="/" exact component={MainPage} />
             <Route path="/cv" exact component={Cv} />
-            <Route component={ErrorPage} />
+            <Route component={MainPage} />
+            {/* <Route component={ErrorPage} /> */}
           </Switch>
         </BrowserRouter>
       </div>
