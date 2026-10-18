@@ -194,3 +194,6 @@ package-lock.json
 
 ## ignore all .txt files
 *.txt
+# Vite build output + local lockfiles (generated against a private registry)
+/dist
+bun.lock

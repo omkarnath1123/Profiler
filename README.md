@@ -2,18 +2,18 @@
 
 [![Github-pages](src/images/github_pages.png)](https://omkarnath1123.github.io/Profiler/)
 
-<!-- [![Trello](src/images/trello.png)]() -->
+My personal site and online CV, built with React + Vite and hosted on GitHub Pages.
 
-> click on the above :point_up: `Github pages` badge to visit the website. Hope you like it :exclamation::exclamation:
-
-This repository contain the React code for website @ Github.
-
-- branch `master` contains the react code.
-- branch `gh-pages` contains the react build.
-
-Feel free to report [issue](https://github.com/omkarnath1123/Profiler/issues) or make Pull Requests for any changes/fixes.
+- `master` holds the source; `gh-pages` holds the built site.
+- All content (experience, skills, projects, links) lives in **`src/data/profile.js`**. Edit that one file to update the site.
 
 ### Commands
 
-- run `npm run predeploy` to create build.
-- run `npm run deploy` to create build and push build to `gh-pages` branch.
+```bash
+npm install
+npm run dev       # local dev server at http://localhost:5173/Profiler/
+npm run build     # production build into dist/
+npm run deploy    # build + push dist/ to the gh-pages branch
+```
+
+It's a single page; `public/404.html` redirects old links like `/Profiler/cv` to it.
