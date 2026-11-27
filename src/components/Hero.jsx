@@ -40,7 +40,7 @@ export default function Hero() {
         </dl>
       </div>
 
-      <ul className="highlights" aria-label="Highlights">
+      <ul className="highlights tinted" aria-label="Highlights">
         {highlights.map((item) => (
           <li key={item.label}>
             <strong>{item.value}</strong>

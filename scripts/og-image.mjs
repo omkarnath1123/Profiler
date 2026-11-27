@@ -29,18 +29,23 @@ const html = `<!doctype html>
   body {
     display: flex; flex-direction: column; justify-content: space-between;
     box-sizing: border-box; width: 1200px; height: 630px; margin: 0; padding: 64px 80px;
-    background: #faf9f6; color: #15171c; font-family: "Sans";
+    background:
+      radial-gradient(700px 420px at 0% 0%, #e9e3ff, transparent 70%),
+      radial-gradient(700px 420px at 100% 0%, #ffe4d4, transparent 70%),
+      radial-gradient(700px 380px at 60% 100%, #d5f2e3, transparent 70%),
+      #fdfaf6;
+    color: #2a2440; font-family: "Sans";
   }
   p, h1 { margin: 0; }
   .mark {
     display: grid; place-items: center; width: 72px; height: 72px; border-radius: 18px;
-    background: #15171c; color: #faf9f6; font: 36px "Serif";
+    background: #ffffff; color: #2a2440; font: 36px "Serif";
   }
   h1 { font: 400 148px/1 "Serif"; letter-spacing: -0.02em; }
   .headline { margin-top: 20px; font-size: 40px; font-weight: 600; }
-  .focus { margin-top: 6px; font-size: 32px; color: #626873; }
-  .foot { display: flex; justify-content: space-between; font-size: 26px; color: #626873; }
-  .foot span:last-child { color: #0f5c41; }
+  .focus { margin-top: 6px; font-size: 32px; color: #48435c; }
+  .foot { display: flex; justify-content: space-between; font-size: 26px; color: #48435c; }
+  .foot span:last-child { color: #5b46c7; }
 </style>
 <div class="mark">${escapeHtml(person.initials)}</div>
 <div>

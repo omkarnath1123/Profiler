@@ -11,7 +11,7 @@ export default function Cv() {
       <a className="skip-link" href="#main">Skip to content</a>
       <Hero />
 
-      <main id="main">
+      <main id="main" className="tinted">
         <Section title="About">
           {about.map((paragraph) => <p key={paragraph.slice(0, 20)} className="about-text">{paragraph}</p>)}
         </Section>
@@ -21,7 +21,7 @@ export default function Cv() {
         </Section>
 
         <Section title="Recognition">
-          <ul className="entries">
+          <ul className="entries tinted">
             {awards.map((award) => (
               <li key={award.title}>
                 <p className="entry-title">{award.title}</p>
@@ -33,18 +33,20 @@ export default function Cv() {
         </Section>
 
         <Section title="Skills">
-          <dl className="skills">
+          <dl className="skills tinted">
             {skills.map((skill) => (
               <div key={skill.group} className="skill-row">
                 <dt>{skill.group}</dt>
-                <dd>{skill.items.join(" · ")}</dd>
+                <dd>
+                  <ul className="chips">{skill.items.map((item) => <li key={item}>{item}</li>)}</ul>
+                </dd>
               </div>
             ))}
           </dl>
         </Section>
 
         <Section title="Projects">
-          <ul className="entries">
+          <ul className="entries tinted">
             {projects.map((project) => (
               <li key={project.name}>
                 <p className="entry-title">
@@ -67,15 +69,17 @@ export default function Cv() {
 
         {/* On paper the contact details are already printed under the intro. */}
         <Section title="Contact" screenOnly>
-          <p>{person.pitch}</p>
-          <a className="contact-email" href={`mailto:${person.email}`}>{person.email}</a>
-          <ul className="contact-links">
-            {links.map((link) => (
-              <li key={link.label}>
-                <a href={link.href} target="_blank" rel="noopener noreferrer">{prettyUrl(link.href)}</a>
-              </li>
-            ))}
-          </ul>
+          <div className="contact-panel">
+            <p>{person.pitch}</p>
+            <a className="contact-email" href={`mailto:${person.email}`}>{person.email}</a>
+            <ul className="contact-links">
+              {links.map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} target="_blank" rel="noopener noreferrer">{prettyUrl(link.href)}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </Section>
       </main>
 

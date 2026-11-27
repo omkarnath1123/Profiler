@@ -1,15 +1,24 @@
-/* Editorial single-column CV. Text colours meet AA contrast in both themes. */
+/* Pastel editorial CV. Text is always dark ink on a light tint (or the reverse in the
+   dark theme), so it keeps AA contrast. --muted is only for text on --bg or --surface;
+   on a pastel tint use --text. */
 :root {
   color-scheme: light;
-  --bg: #faf9f6;
+  --bg: #fdfaf6;
   --surface: #ffffff;
-  --ink: #15171c;
-  --text: #363a43;
-  --muted: #626873;
-  --line: #e3e0d9;
-  --accent: #0f5c41;
-  --accent-soft: #e4efe9;
+  --ink: #2a2440;
+  --text: #48435c;
+  --muted: #6f6a85;
+  --line: #ebe5f0;
+  --accent: #5b46c7;
   --on-accent: #ffffff;
+  --positive: #1c6b4a;
+  --lavender: #e9e3ff;
+  --mint: #d5f2e3;
+  --peach: #ffe4d4;
+  --sky: #d8ebff;
+  --butter: #fff1c9;
+  --rose: #ffe0ea;
+  --shadow: 0 18px 40px -24px rgb(91 70 199 / 0.35);
   --sans: "Inter Variable", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
 }
@@ -17,22 +26,44 @@
 @media screen and (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --bg: #0e1013;
-    --surface: #16191e;
-    --ink: #f3f4f6;
-    --text: #c8ccd3;
-    --muted: #979ea9;
-    --line: #282c34;
-    --accent: #72d6a8;
-    --accent-soft: #15271f;
-    --on-accent: #0b1a13;
+    --bg: #15131f;
+    --surface: #1d1a2b;
+    --ink: #f4f1ff;
+    --text: #cdc8e0;
+    --muted: #9f99b8;
+    --line: #2e2a42;
+    --accent: #b7a8ff;
+    --on-accent: #1a1530;
+    --positive: #8fe0b8;
+    --lavender: #2d2752;
+    --mint: #18382c;
+    --peach: #45291d;
+    --sky: #1b3350;
+    --butter: #3f361a;
+    --rose: #452334;
+    --shadow: none;
   }
 }
+
+/* Children of a .tinted container take the pastels in turn, so repeated cards,
+   chips and section labels never all look the same. */
+.tinted > :nth-child(6n + 1) { --tint: var(--lavender); }
+.tinted > :nth-child(6n + 2) { --tint: var(--mint); }
+.tinted > :nth-child(6n + 3) { --tint: var(--peach); }
+.tinted > :nth-child(6n + 4) { --tint: var(--sky); }
+.tinted > :nth-child(6n + 5) { --tint: var(--butter); }
+.tinted > :nth-child(6n) { --tint: var(--rose); }
 
 *, *::before, *::after { box-sizing: border-box; }
 body {
   margin: 0;
-  background: var(--bg);
+  /* A soft wash of three pastels behind the top of the page. */
+  background:
+    radial-gradient(64rem 34rem at 0% 0%, var(--lavender), transparent 70%),
+    radial-gradient(56rem 30rem at 100% 0%, var(--peach), transparent 70%),
+    radial-gradient(36rem 14rem at 50% -4rem, var(--mint), transparent 70%),
+    var(--bg);
+  background-repeat: no-repeat;
   color: var(--text);
   font-family: var(--sans);
   font-size: 1rem;
@@ -61,9 +92,10 @@ a:hover { text-decoration-color: currentColor; }
   place-items: center;
   width: 44px;
   height: 44px;
-  border-radius: 12px;
-  background: var(--ink);
-  color: var(--bg);
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--lavender), var(--rose));
+  box-shadow: var(--shadow);
+  color: var(--ink);
   font-family: var(--serif);
   font-size: 1.35rem;
 }
@@ -86,8 +118,8 @@ a:hover { text-decoration-color: currentColor; }
   margin-bottom: 28px;
   padding: 6px 14px;
   border-radius: 999px;
-  background: var(--accent-soft);
-  color: var(--accent);
+  background: var(--mint);
+  color: var(--positive);
   font-size: 0.85rem;
   font-weight: 550;
 }
@@ -110,7 +142,7 @@ a:hover { text-decoration-color: currentColor; }
   padding: 11px 22px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: transparent;
+  background: var(--surface);
   color: var(--ink);
   font: inherit;
   font-size: 0.95rem;
@@ -127,8 +159,9 @@ a:hover { text-decoration-color: currentColor; }
 .glance {
   padding: 6px 24px;
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 20px;
   background: var(--surface);
+  box-shadow: var(--shadow);
   font-size: 0.92rem;
 }
 .glance-row { display: grid; grid-template-columns: 108px 1fr; gap: 12px; padding: 12px 0; }
@@ -136,14 +169,8 @@ a:hover { text-decoration-color: currentColor; }
 .glance dt { color: var(--muted); }
 .glance dd { font-weight: 500; color: var(--ink); }
 
-.highlights {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-.highlights li { padding: 28px 24px; border-left: 1px solid var(--line); }
-.highlights li:first-child { padding-left: 0; border-left: 0; }
+.highlights { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.highlights li { padding: 24px; border-radius: 20px; background: var(--tint); }
 .highlights strong {
   display: block;
   font-family: var(--serif);
@@ -152,30 +179,32 @@ a:hover { text-decoration-color: currentColor; }
   line-height: 1;
   color: var(--ink);
 }
-.highlights span { display: block; margin-top: 10px; font-size: 0.88rem; line-height: 1.45; color: var(--muted); }
+.highlights span { display: block; margin-top: 10px; font-size: 0.88rem; line-height: 1.45; }
 
 /* ---------- Sections ---------- */
 .section {
   display: grid;
   grid-template-columns: 200px minmax(0, 1fr);
   gap: 40px;
-  padding: 56px 0;
-  border-bottom: 1px solid var(--line);
+  padding: 44px 0;
 }
 .section-title {
   position: sticky;
   top: 24px;
-  align-self: start;
-  padding-top: 5px;
-  font-size: 0.78rem;
+  place-self: start;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--tint);
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--ink);
 }
 .about-text + .about-text { margin-top: 14px; }
 
-.job + .job { margin-top: 44px; padding-top: 44px; border-top: 1px solid var(--line); }
+.job { padding: 28px 30px; border: 1px solid var(--line); border-radius: 20px; background: var(--surface); }
+.job + .job { margin-top: 18px; }
 .job-head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; }
 .job-company { font-size: 1.2rem; font-weight: 650; letter-spacing: -0.01em; color: var(--ink); }
 .job-role { font-weight: 500; color: var(--ink); }
@@ -194,14 +223,24 @@ a:hover { text-decoration-color: currentColor; }
   background: var(--accent);
 }
 
-.entries { display: grid; gap: 26px; }
+.entries { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.entries li { padding: 20px 22px; border-radius: 18px; background: var(--tint); }
 .entry-title { font-weight: 600; color: var(--ink); }
 .entry-meta { font-size: 0.88rem; color: var(--muted); }
+.entries .entry-meta { margin-bottom: 6px; color: var(--text); }
 
-.skill-row { display: grid; grid-template-columns: 200px 1fr; gap: 16px; padding: 12px 0; }
-.skill-row + .skill-row { border-top: 1px solid var(--line); }
+.skill-row { display: grid; grid-template-columns: 200px 1fr; gap: 16px; padding: 10px 0; }
 .skill-row:first-child { padding-top: 0; }
-.skills dt { font-weight: 600; color: var(--ink); }
+.skills dt { padding-top: 3px; font-weight: 600; color: var(--ink); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips li { padding: 3px 12px; border-radius: 999px; background: var(--tint); font-size: 0.88rem; color: var(--ink); }
+
+.contact-panel {
+  padding: 36px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, var(--lavender), var(--peach));
+  color: var(--ink);
+}
 
 /* Sans on purpose: the serif's "1" reads as a lowercase "l", which is fatal in an address. */
 .contact-email {
@@ -220,12 +259,12 @@ a:hover { text-decoration-color: currentColor; }
 @media screen and (max-width: 860px) {
   .page { padding: 0 20px 48px; }
   .hero-grid { grid-template-columns: 1fr; gap: 36px; padding: 28px 0 40px; }
-  .highlights { grid-template-columns: repeat(2, 1fr); }
-  .highlights li { padding: 22px 16px; }
-  .highlights li:nth-child(odd) { padding-left: 0; border-left: 0; }
-  .highlights li:nth-child(n + 3) { border-top: 1px solid var(--line); }
-  .section { grid-template-columns: 1fr; gap: 20px; padding: 40px 0; }
+  .highlights { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .highlights li { padding: 18px; }
+  .section { grid-template-columns: 1fr; gap: 18px; padding: 32px 0; }
   .section-title { position: static; }
+  .job { padding: 22px 20px; }
+  .contact-panel { padding: 26px 22px; }
 }
 @media screen and (max-width: 520px) {
   .topbar-links { gap: 18px; }
@@ -234,12 +273,14 @@ a:hover { text-decoration-color: currentColor; }
   .skill-row { grid-template-columns: 1fr; gap: 2px; }
 }
 
-/* ---------- Paper: a plain A4 CV ---------- */
+/* ---------- Paper: an A4 CV. Pastel fills are kept (they are light on ink); the page wash and cards' padding are not. ---------- */
 @media print {
   @page { size: A4; margin: 13mm 14mm; }
   /* Every font size above is in rem, so this one line rescales all the type for paper. */
   :root { font-size: 9pt; }
   body { background: #fff; line-height: 1.42; }
+  .highlights li, .section-title, .chips li, .entries li { print-color-adjust: exact; }
+  .glance { box-shadow: none; }
   .page { max-width: none; padding: 0; }
   .topbar, .actions, .skip-link, .site-footer, .status, .screen-only { display: none; }
   .print-only { display: block; margin-top: 6pt; }
@@ -250,19 +291,25 @@ a:hover { text-decoration-color: currentColor; }
   .current { margin-top: 4pt; }
   .glance { padding: 2pt 10pt; border-radius: 8pt; }
   .glance-row { grid-template-columns: 20mm 1fr; gap: 3mm; padding: 3pt 0; }
-  .highlights li { padding: 7pt 10pt; }
+  .highlights { gap: 6pt; }
+  .highlights li { padding: 7pt 10pt; border-radius: 8pt; }
   .highlights strong { font-size: 17pt; }
   .highlights span { margin-top: 3pt; }
   .section { grid-template-columns: 28mm minmax(0, 1fr); gap: 5mm; padding: 5mm 0; }
-  .section-title { position: static; padding-top: 2pt; }
+  .section-title { position: static; padding: 2pt 7pt; }
   .about-text + .about-text { margin-top: 5pt; }
-  .job + .job { margin-top: 4mm; padding-top: 4mm; }
+  .job { padding: 0; border: 0; border-radius: 0; }
+  .job + .job { margin-top: 4mm; padding-top: 4mm; border-top: 1px solid var(--line); }
   .job-summary { margin-top: 3pt; }
   .group-name { margin-top: 7pt; }
   .points { gap: 2pt; margin-top: 3pt; }
   .points li { padding-left: 12pt; }
   .entries { gap: 6pt; }
-  .skill-row { grid-template-columns: 40mm 1fr; padding: 3pt 0; }
+  .entries li { padding: 6pt 9pt; border-radius: 8pt; }
+  .entries .entry-meta { margin-bottom: 2pt; }
+  .skill-row { grid-template-columns: 40mm 1fr; padding: 2.5pt 0; }
+  .chips { gap: 3pt; }
+  .chips li { padding: 1pt 7pt; }
   .job-head, .group-name { break-after: avoid; }
   .points li, .entries li, .skill-row, .glance, .highlights { break-inside: avoid; }
 }
