@@ -1,101 +1,85 @@
-import { about, awards, education, experience, links, person, projects, skills } from "../data/profile";
-import avatar from "../images/avatar.png";
+import { about, awards, education, links, person, projects, skills } from "../data/profile";
+import { prettyUrl } from "../lib/prettyUrl";
+import Experience from "./Experience";
+import Hero from "./Hero";
+import Section from "./Section";
 import "./Cv.css";
 
 export default function Cv() {
   return (
-    <div className="resume-wrapper">
-      <aside className="profile section-padding">
-        <div className="picture-resume">
-          <img src={avatar} alt={person.name} />
-        </div>
-        <h1>Omkar <br />Nath</h1>
-        <p className="cv-role">{person.title}</p>
+    <div className="page">
+      <a className="skip-link" href="#main">Skip to content</a>
+      <Hero />
 
-        <dl className="contact-list">
-          <dt>Mail</dt><dd><a href={`mailto:${person.email}`}>{person.email}</a></dd>
-          <dt>Home</dt><dd>{person.location}</dd>
-          {links.filter((l) => l.label !== "Email").map((l) => (
-            <div key={l.label} className="contact-row">
-              <dt>{l.label}</dt>
-              <dd><a href={l.href} target="_blank" rel="noopener noreferrer">{l.href.replace(/^https:\/\/(www\.)?/, "").replace(/\/$/, "")}</a></dd>
-            </div>
-          ))}
-        </dl>
+      <main id="main">
+        <Section title="About">
+          {about.map((paragraph) => <p key={paragraph.slice(0, 20)} className="about-text">{paragraph}</p>)}
+        </Section>
 
-        <p className="contact-presentation">{person.tagline}</p>
+        <Section title="Experience">
+          <Experience />
+        </Section>
 
-        <h2 className="side-title">Education</h2>
-        <p className="education-type">{education.degree}</p>
-        <p className="inst-type">{education.school}</p>
-        <p className="edu-year">{education.period}</p>
+        <Section title="Recognition">
+          <ul className="entries">
+            {awards.map((award) => (
+              <li key={award.title}>
+                <p className="entry-title">{award.title}</p>
+                <p className="entry-meta">{award.by} &middot; {award.date}</p>
+                <p>{award.text}</p>
+              </li>
+            ))}
+          </ul>
+        </Section>
 
-        <h2 className="side-title">Awards</h2>
-        {awards.map((a) => (
-          <div key={a.title} className="award">
-            <p className="education-type">{a.title}</p>
-            <p className="inst-type">{a.by} &middot; {a.date}</p>
-            <p className="award-text">{a.text}</p>
-          </div>
-        ))}
-      </aside>
+        <Section title="Skills">
+          <dl className="skills">
+            {skills.map((skill) => (
+              <div key={skill.group} className="skill-row">
+                <dt>{skill.group}</dt>
+                <dd>{skill.items.join(" · ")}</dd>
+              </div>
+            ))}
+          </dl>
+        </Section>
 
-      <main className="experience section-padding">
-        <h2 className="section-heading">About</h2>
-        {about.map((p) => <p key={p.slice(0, 20)} className="about-text">{p}</p>)}
+        <Section title="Projects">
+          <ul className="entries">
+            {projects.map((project) => (
+              <li key={project.name}>
+                <p className="entry-title">
+                  {project.href
+                    ? <a href={project.href} target="_blank" rel="noopener noreferrer">{project.name}</a>
+                    : project.name}
+                </p>
+                <p className="entry-meta">{project.year}</p>
+                <p>{project.text}</p>
+              </li>
+            ))}
+          </ul>
+        </Section>
 
-        <h2 className="section-heading">Experience</h2>
-        {experience.map((job) => (
-          <section key={job.company} className="job">
-            <div className="company-wrapper">
-              <h3 className="job-company">{job.company}</h3>
-              <p className="time">{job.period}</p>
-              <p className="time">{job.place}</p>
-            </div>
-            <div className="job-wrapper">
-              <h4 className="job-role">{job.role}</h4>
-              <p className="company-description">{job.summary}</p>
-              {job.groups.map((g, i) => (
-                <div key={g.name || i}>
-                  {g.name && <p className="group-name">{g.name}</p>}
-                  <ul className="points">{g.points.map((pt) => <li key={pt}>{pt}</li>)}</ul>
-                </div>
-              ))}
-            </div>
-          </section>
-        ))}
+        <Section title="Education">
+          <p className="entry-title">{education.degree}</p>
+          <p>{education.school}</p>
+          <p className="entry-meta">{education.period} &middot; {education.place}</p>
+        </Section>
 
-        <h2 className="section-heading">Projects</h2>
-        <ul className="projects">
-          {projects.map((p) => (
-            <li key={p.name}>
-              <p className="project-name">
-                {p.href ? <a href={p.href} target="_blank" rel="noopener noreferrer">{p.name}</a> : p.name}
-                <span className="project-year"> &middot; {p.year}</span>
-              </p>
-              <p>{p.text}</p>
-            </li>
-          ))}
-        </ul>
-
-        <h2 className="section-heading">Skills</h2>
-        <div className="skills">
-          {skills.map((s) => (
-            <div key={s.group}>
-              <h3 className="skill-group">{s.group}</h3>
-              <ul className="chips">{s.items.map((it) => <li key={it}>{it}</li>)}</ul>
-            </div>
-          ))}
-        </div>
-
-        <section className="cta" aria-label="Contact">
-          <h2 className="section-heading">Get in touch</h2>
-          <p>Like what you see? <a href={`mailto:${person.email}`}>{person.email}</a></p>
-        </section>
-
-        <p className="print-hint"><button type="button" onClick={() => window.print()}>Print / save as PDF</button></p>
-        <footer className="cv-footer">&copy; {person.name} {new Date().getFullYear()}</footer>
+        {/* On paper the contact details are already printed under the intro. */}
+        <Section title="Contact" screenOnly>
+          <p>{person.pitch}</p>
+          <a className="contact-email" href={`mailto:${person.email}`}>{person.email}</a>
+          <ul className="contact-links">
+            {links.map((link) => (
+              <li key={link.label}>
+                <a href={link.href} target="_blank" rel="noopener noreferrer">{prettyUrl(link.href)}</a>
+              </li>
+            ))}
+          </ul>
+        </Section>
       </main>
+
+      <footer className="site-footer">&copy; {new Date().getFullYear()} {person.name}</footer>
     </div>
   );
 }

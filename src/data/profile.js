@@ -3,17 +3,42 @@
 
 export const person = {
   name: "Omkar Nath",
+  initials: "ON",
+  headline: "Senior Backend Engineer",
+  focus: "Distributed systems & event-driven platforms",
   title: "Software Engineer III @ Walmart Global Tech",
-  tagline: "Backend & distributed systems engineer building systems that move data reliably at scale.",
+  tagline: "I build the systems that move data reliably at scale: event publishing, messaging and warehouse automation behind Walmart's supply chain.",
   location: "Bengaluru, India",
   email: "omkarnath1123@gmail.com",
+  // Job-search signal shown above the name. Set to "" to hide it.
+  status: "Open to senior backend roles in Europe",
+  pitch: "Have a backend or distributed-systems role in mind? Email is the fastest way to reach me.",
 };
+
+// The "at a glance" card in the hero: what a recruiter abroad needs in five seconds.
+// The relocation, work-permit and notice rows announce a job search to anyone
+// who visits, so delete those rows if the site should stay neutral.
+export const glance = [
+  { label: "Experience", value: "8+ years" },
+  { label: "Based in", value: "Bengaluru, India (UTC+5:30)" },
+  { label: "Relocation", value: "Germany or the Netherlands" },
+  { label: "Work permit", value: "Visa sponsorship required" },
+  { label: "Notice period", value: "1 month" },
+  { label: "Languages", value: "English (C1), Hindi (native)" },
+];
+
+// Headline numbers under the hero. Only figures that are already public on this page.
+export const highlights = [
+  { value: "8+", label: "years of engineering across retail supply chain, telecom and healthcare" },
+  { value: "~40%", label: "smaller Rapid-Relayer database after day-of-week partitioning" },
+  { value: "270%", label: "best-case improvement in bulk-task performance at Ciena" },
+  { value: "2nd", label: "of 150+ teams at Walmart's Nirmaan Hackathon" },
+];
 
 export const links = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/omkarnath1123/" },
   { label: "GitHub", href: "https://github.com/omkarnath1123" },
   { label: "LeetCode", href: "https://leetcode.com/omkarnath1123" },
-  { label: "Email", href: `mailto:${person.email}` },
 ];
 
 export const about = [
@@ -27,7 +52,7 @@ export const experience = [
     company: "Walmart Global Tech",
     role: "Software Engineer III",
     period: "Aug 2022 – Present",
-    place: "Bengaluru",
+    place: "Bengaluru, India",
     summary: "Backend engineer on Walmart's supply-chain platform, which runs receiving, inventory, allocation, fulfillment and loading for Walmart and Sam's Club distribution and fulfillment centers.",
     groups: [
       {
@@ -38,6 +63,7 @@ export const experience = [
           "Built source and sink connectors (SQL Server, Cosmos DB, Azure Blob, Kafka, IBM MQ, HTTP, GCP, BigQuery); now runs in dozens of deployments across Walmart and Sam's Club",
           "Cut database size by about 40% with day-of-week partitioning, turning purges that took most of an hour per million rows into seconds",
           "Self-service onboarding UI, automated secret rotation, disaster recovery, message reconciliation and alerting",
+          "Led onboarding, deployment and go-live for the teams adopting it, wrote its design docs and documentation, and ran its design showcases",
         ],
       },
       {
@@ -53,13 +79,21 @@ export const experience = [
           "Triaged and fixed production issues during go-live hypercare",
         ],
       },
+      {
+        name: "Ownership & ways of working",
+        points: [
+          "Mentor the interns and new engineers on my team, and work in English every day with teams across time zones",
+          "Support launches and pilots in production with Grafana, Prometheus and Splunk",
+          "Use AI coding tools such as Claude Code and GitHub Copilot in day-to-day development",
+        ],
+      },
     ],
   },
   {
     company: "Ciena",
     role: "Software Engineer 1B → 2A",
     period: "Dec 2020 – Jul 2022",
-    place: "Gurugram",
+    place: "Gurugram, India",
     summary: "Ethernet VPN (EVPN) networking services. Promoted to 2A within 17 months.",
     groups: [{ points: [
       "Improved bulk-task execution performance by up to 270%",
@@ -71,8 +105,8 @@ export const experience = [
     company: "MphRx",
     role: "Software Engineer 2",
     period: "Sep 2019 – Nov 2020",
-    place: "Gurugram",
-    summary: "Backend engineer on healthcare platforms.",
+    place: "Gurugram, India",
+    summary: "Full-stack engineer on healthcare platforms.",
     groups: [{ points: [
       "COVID-19 questionnaire module for practitioners and patients",
       "Identity-management portal that verifies patient documents against Austrian government servers",
@@ -83,10 +117,11 @@ export const experience = [
     company: "App Street (for Bharti Airtel)",
     role: "Software Developer",
     period: "Jun 2018 – Aug 2019",
-    place: "Gurugram",
-    summary: "Bharti Airtel's Network Digitization program.",
+    place: "Gurugram, India",
+    summary: "Network Digitization program for Bharti Airtel, one of India's largest telecom operators.",
     groups: [{ points: [
-      "Automated end-to-end site deployment for radio, microwave and fiber networks, used by all 23 Airtel circles across India",
+      "Automated end-to-end site deployment for radio, microwave and fiber networks, used in all 23 of Airtel's regional circles across India",
+      "React front ends and Node.js / Express services on MongoDB",
       "Job-scheduling web crawler with Puppeteer",
     ] }],
   },
@@ -102,7 +137,7 @@ export const experience = [
     company: "StartupFlux",
     role: "Backend Developer (intern)",
     period: "Dec 2016 – Jan 2017",
-    place: "Noida",
+    place: "Noida, India",
     summary: "Scraping and crawling pipelines into MongoDB, feeding a model that predicts startup growth.",
     groups: [],
   },
@@ -112,6 +147,7 @@ export const education = {
   school: "Delhi Technological University (formerly DCE)",
   degree: "B.Tech, Mathematics and Computing",
   period: "2014 – 2018",
+  place: "Delhi, India",
 };
 
 export const awards = [
@@ -124,9 +160,10 @@ export const awards = [
 export const skills = [
   { group: "Languages", items: ["Java", "SQL", "Python", "JavaScript", "Bash"] },
   { group: "Frameworks", items: ["Spring Boot", "Spring Kafka", "Kafka Streams", "Liquibase", "Redisson"] },
-  { group: "Data & messaging", items: ["Apache Kafka", "SQL Server / Azure SQL", "Cosmos DB", "BigQuery", "IBM MQ", "Redis", "MongoDB"] },
-  { group: "Cloud & ops", items: ["Kubernetes", "Docker", "Azure", "GCP", "Prometheus", "Grafana"] },
+  { group: "Data & messaging", items: ["Apache Kafka", "SQL Server / Azure SQL", "PostgreSQL", "Cosmos DB", "BigQuery", "IBM MQ", "Redis", "MongoDB", "Elasticsearch"] },
+  { group: "Cloud & ops", items: ["Kubernetes", "Docker", "Azure", "GCP", "Prometheus", "Grafana", "Splunk"] },
   { group: "Patterns", items: ["Transactional outbox", "Consistent hashing", "Leader election", "Retry & backoff", "Event-driven microservices"] },
+  { group: "Full stack (earlier roles)", items: ["React", "Node.js", "Express", "Angular"] },
 ];
 
 export const projects = [

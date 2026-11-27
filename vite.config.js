@@ -1,8 +1,12 @@
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
+import pkg from "./package.json" with { type: "json" };
+import { seoPlugin } from "./vite.seo.js";
 
-// Served from https://omkarnath1123.github.io/Profiler/
+// package.json "homepage" is the one place the public URL is written down.
+const siteUrl = `${pkg.homepage}/`;
+
 export default defineConfig({
-  base: "/Profiler/",
-  plugins: [react()],
+  base: new URL(siteUrl).pathname,
+  plugins: [react(), seoPlugin(siteUrl)],
 });
